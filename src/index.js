@@ -1,4 +1,4 @@
-import { Layer } from './Layer/index.js';
+import { Drink } from './Drink/index.js';
 import './style.css';
 
 const navBtnElm = document.querySelector('#nav-btn');
@@ -13,38 +13,36 @@ navLinkElms.forEach((navLinkElm) => {
   });
 });
 
-const orderBtnElm = document.querySelector('.order-btn');
-let ordered = false;
-orderBtnElm.addEventListener('click', () => {
-  const drinkCupElm = document.querySelector('.drink__cup');
-  if (!ordered) {
-    orderBtnElm.textContent = 'Zrušit';
-    drinkCupElm.classList.add('drink__cup--selected');
-    ordered = true;
-  } else {
-    orderBtnElm.textContent = 'Objednat';
-    drinkCupElm.classList.remove('drink__cup--selected');
-    ordered = false;
-  }
-});
+// const orderBtnElm = document.querySelector('.order-btn');
+// let ordered = false;
+// orderBtnElm.addEventListener('click', () => {
+//   const drinkCupElm = document.querySelector('.drink__cup');
+//   if (!ordered) {
+//     orderBtnElm.textContent = 'Zrušit';
+//     drinkCupElm.classList.add('drink__cup--selected');
+//     ordered = true;
+//   } else {
+//     orderBtnElm.textContent = 'Objednat';
+//     drinkCupElm.classList.remove('drink__cup--selected');
+//     ordered = false;
+//   }
+// });
 
-const layers = [
-  {
-    color: '#feeeca',
-    label: 'mléčná pěna',
-  },
-  {
-    color: '#fed7b0',
-    label: 'teplé mléko',
-  },
-  {
-    color: '#613916',
-    label: 'espresso',
-  },
-];
-
-const drinkInfoElm = document.querySelector('.drink__info');
-
-layers.forEach((layer) => {
-  drinkInfoElm.innerHTML += Layer(layer);
-});
+const drinksListElm = document.querySelector('.drinks-list');
+const drink = {
+  id: 'romano',
+  name: 'Romano',
+  ordered: false,
+  image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/romano.png',
+  layers: [
+    {
+      color: '#fbdf5b',
+      label: 'citrón',
+    },
+    {
+      color: '#613916',
+      label: 'espresso',
+    },
+  ],
+};
+drinksListElm.appendChild(Drink(drink));
