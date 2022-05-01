@@ -13,21 +13,6 @@ navLinkElms.forEach((navLinkElm) => {
   });
 });
 
-// const orderBtnElm = document.querySelector('.order-btn');
-// let ordered = false;
-// orderBtnElm.addEventListener('click', () => {
-//   const drinkCupElm = document.querySelector('.drink__cup');
-//   if (!ordered) {
-//     orderBtnElm.textContent = 'Zrušit';
-//     drinkCupElm.classList.add('drink__cup--selected');
-//     ordered = true;
-//   } else {
-//     orderBtnElm.textContent = 'Objednat';
-//     drinkCupElm.classList.remove('drink__cup--selected');
-//     ordered = false;
-//   }
-// });
-
 const drinksListElm = document.querySelector('.drinks-list');
 const drink = {
   id: 'romano',
